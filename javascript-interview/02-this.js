@@ -1,7 +1,7 @@
 "use strict";
 
 //TODO: ====================== this in global space ========================
-console.log('the value of this keyword in Global Space: ', this)
+// console.log('the value of this keyword in Global Space: ', this)
 
 
 //TODO:  =================== this keyword inside a function ==========================
@@ -14,11 +14,11 @@ function x() {
 //! NOTE: If the value of this keyword is undefined or null, this keyword will be replaced with globalObject only in non-strict mode 
 
 //! NOTE: the value of this keyword depends on how it is called
-x();
-window.x();
+// x();
+// window.x();
 
 
-//TODO:  =================== this inside a object's method ==========================
+// //TODO:  =================== this inside a object's method ==========================
 const obj = {
   a: 10,
   x: function () {
@@ -26,7 +26,7 @@ const obj = {
   }
 }
 
-obj.x();
+// obj.x();
 
 // ! NOTE: The value of this keyword inside an object is the object itself
 
@@ -38,15 +38,15 @@ const student1 = {
     console.log(this.name)
   }
 }
-console.log('Name of student without call method: ');
-student1.printName();
+// console.log('Name of student without call method: ');
+// student1.printName();
 
 
 const student2 = {
   name: 'Aiman'
 }
-console.log('Name of student with call method: ')
-student1.printName.call(student2)
+// console.log('Name of student with call method: ')
+// student1.printName.call(student2)
 
 
 //TODO:  =================== this keyword inside arrow function =============
@@ -57,8 +57,8 @@ const object = {
     console.log(this)
   }
 }
-console.log('Value of this keyword in Arrow Function : ')
-object.printName()
+// console.log('Value of this keyword in Arrow Function : ')
+// object.printName()
 
 //TODO:  =================== this keyword in nested arrow function =============
 const obj2 = {
@@ -72,5 +72,26 @@ const obj2 = {
     y();
   }
 }
-console.log("The vlaue of this keyword in nested arrwo function :  ")
-obj2.x()
+// console.log("The vlaue of this keyword in nested arrwo function :  ")
+// obj2.x()
+
+
+
+//! ================= Practice Question ========================
+function createUser(name , age){
+  return {
+    name : name ,
+    age: age ,
+    introduce : function(){
+      return `Hi, my name is ${this.name} and I am ${this.age} years old.`
+    }
+  }
+}
+const user1 = createUser("Damon", 25);
+const user2 = createUser("Alex", 30);
+
+console.log(user1.introduce());
+// Hi, my name is Damon and I am 25 years old.
+
+console.log(user2.introduce());
+// Hi, my name is Alex and I am 30 years old.
