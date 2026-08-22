@@ -1,3 +1,4 @@
+
 //TODO:  1. call() method: 
 const invoiceFormatter = {
   formatHeader: function (currency, locale){
@@ -50,19 +51,7 @@ const orderReciept = receiptService.printService.bind(orderData, "$", 0.10);   /
 // orderReciept();
 
 
-// TODO: Practice Question : 
 
-// const user = {
-//   name: "Damon",
-
-//   greet: function () {
-//     console.log(this.name);
-//   }
-// };
-
-// const greetFunction = user.greet;
-
-// greetFunction.call(user);
 
 // TODO: Problem 1 — Function Borrowing with call() :
 //! Constraints
