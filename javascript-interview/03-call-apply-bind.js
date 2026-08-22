@@ -52,15 +52,101 @@ const orderReciept = receiptService.printService.bind(orderData, "$", 0.10);   /
 
 // TODO: Practice Question : 
 
-const user = {
-  name: "Damon",
+// const user = {
+//   name: "Damon",
 
-  greet: function () {
-    console.log(this.name);
+//   greet: function () {
+//     console.log(this.name);
+//   }
+// };
+
+// const greetFunction = user.greet;
+
+// greetFunction.call(user);
+
+// TODO: Problem 1 — Function Borrowing with call() :
+//! Constraints
+//* Don't copy introduce() into employee2.
+//* Don't modify either object.
+//* Don't use an arrow function.
+//* You must use call().
+//* The company name "Google" must be passed as an argument.
+
+
+const employee = {
+  name: "Damon",
+  role: "Frontend Developer",
+  introduce: function (company) {
+    console.log(
+      `${this.name} is a ${this.role} at ${company}`
+    );
   }
 };
 
-const greetFunction = user.greet;
+const employee2 = {
+  name: "Alex",
+  role: "Backend Developer"
+};
 
-greetFunction.call(user);
+// employee.introduce.call(employee2, "Google")
 
+
+// TODO: call() with Multiple Arguments
+/* 
+Your task is to call calculateDiscount() using call() such that:
+
+base      = 100
+discount  = 20
+tax       = 10
+shipping  = 5
+
+The expected result is: 95
+
+Requirements
+You must use call().
+Don't modify calculator.
+Don't modify calculateDiscount.
+Don't manually assign this.
+The three values must be passed as arguments to call().*/
+
+// const calculator = {
+//   base: 100
+// };
+
+function calculateDiscount(discount, tax, shipping) {
+  return this.base - discount + tax + shipping;
+}
+
+// const result = calculateDiscount.call(calculator, 20, 10, 5)
+// console.log(result);
+
+
+/*
+the arguments are already stored inside an array: const values = [100, 50, 25];
+
+Where:
+discount = 100
+tax      = 50
+shipping = 25
+
+Your task:Use apply() to call calculateFinalPrice()
+Expected output:475
+
+Requirements
+Must use apply().
+Don't change calculateFinalPrice().
+Don't manually extract the array values.
+Don't use the spread operator (...).
+calculator must become this.
+ */
+const values = [100, 50, 25];
+const calculator = {
+  base: 500
+};
+
+function calculateFinalPrice(discount, tax, shipping) {
+  return this.base - discount + tax + shipping;
+}
+
+// const result = calculateFinalPrice.apply(calculator, values)
+// console.log(result)
