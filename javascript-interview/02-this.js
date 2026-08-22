@@ -87,11 +87,24 @@ function createUser(name , age){
     }
   }
 }
-const user1 = createUser("Damon", 25);
-const user2 = createUser("Alex", 30);
+// const user1 = createUser("Damon", 25);
+// const user2 = createUser("Alex", 30);
 
-console.log(user1.introduce());
+// console.log(user1.introduce());
 // Hi, my name is Damon and I am 25 years old.
 
-console.log(user2.introduce());
+// console.log(user2.introduce());
 // Hi, my name is Alex and I am 30 years old.
+
+
+//! 2. Lost this
+const user = {
+  name: "Damon",
+
+  greet: function () {
+    return `Hello ${this.name}`;
+  }
+};
+
+const greetFunction = user.greet.bind();
+console.log(greetFunction());
