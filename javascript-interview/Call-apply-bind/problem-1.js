@@ -69,26 +69,3 @@ console.log(getOrderTotal(order, pricingConfig))
 
 
 
-
-// TODO: Practice Question :
-
-// const user = {
-//   name: "Damon",
-
-//   greet: function () {
-//     console.log(this.name);
-//   }
-// };
-
-// const greetFunction = user.greet;
-
-// greetFunction.call(user);
-
-
-
-
-
-
-
-
-
