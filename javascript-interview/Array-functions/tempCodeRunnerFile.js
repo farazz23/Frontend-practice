@@ -1,9 +1,6 @@
+ // if (currentOrder.status === "delivered"){
+    //   groupedItem[customerId].totalRevenue+=currentOrder.total;
+    //   groupedItem[customerId].deliveredOrders++;
+    // }
 
-// function calculateDeliveredRevenue(orders) {
-//   const initialRevenue = 0
-//   return orders
-//     .filter((order) => order.status === "delivered")
-//     .reduce((acc, value) => {
-//       return acc + value.total
-//     }, initialRevenue)
-// }
+    // groupedItem[customerId].totalOrders++;
